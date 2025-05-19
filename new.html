@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Personal Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      font-size: 17px;
+      height: 100%;
+    }
+
+    /* Fullscreen Video Header */
+    #myVideo {
+      position: fixed;
+      right: 0;
+      bottom: 50;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
+
+    .video-content {
+      position: relative;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      color: #f1f1f1;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    #myBtn {
+      width: 200px;
+      font-size: 18px;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    #myBtn:hover {
+      background: #ddd;
+      color: black;
+    }
+
+    /* Navigation Menu */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #556B2F;
+      z-index: 2;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 18px;
+      display: inline-block;
+      transition: 0.2s;
+    }
+
+    .navbar a:hover {
+      background-color: #444;
+      border-radius: 5px;
+    }
+
+    /* Hamburger menu for mobile */
+    .menu-toggle {
+      display: none;
+      font-size: 25px;
+      cursor: pointer;
+      background-color: #556B2F;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+    }
+
+    /* Main Content */
+    main {
+      padding: 30px 20px;
+      background-color: #F5F5DC;
+    }
+
+    section {
+      display: none;
+      padding: 40px;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #eee;
+    }
+
+    img {
+      border: 5px solid #6B8E23;
+      border-radius: 8px;
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      height: auto;
+    }
+
+    body {margin:25px;}
+
+    img:hover {
+      transform: scaleX(-1);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 10px 0;
+      }
+      .navbar a {
+        display: none;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+      }
+      .menu-toggle {
+        display: inline-block;
+      }
+      .navbar.responsive a {
+        display: block;
+      }
+      section {
+        padding: 20px;
+      }
+    }
+
+    /* Center images in gallery */
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .image-container img {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay loop muted id="myVideo">
+    <source src="videos/video_html.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Navigation Menu -->
+  <div class="navbar" id="myNavbar">
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <a href="#" onclick="showSection('about')">About Me</a>
+    <a href="#" onclick="showSection('family')">Family</a>
+    <a href="#" onclick="showSection('friends')">Friends</a>
+    <a href="#" onclick="showSection('education')">Education</a>
+    <a href="#" onclick="showSection('interests')">Interests</a>
+    <a href="#" onclick="showSection('gallery')">Gallery</a>
+    <a href="#" onclick="showSection('contact')">Contact</a>
+  </div>
+
+  <!-- Video Header Content -->
+  <div class="video-content">
+    <h1>Welcome to My Personal Website</h1>
+    <p>This website is a small window into my life, my interests, and the people around me.</p>
+    <button id="myBtn" onclick="toggleVideo()">Pause</button>
+  </div>
+
+  <!-- Page Content -->
+  <main>
+    <section id="about" class="active">
+      <h2>&#127807;About me &#127807; </h2>
+      <p>&#127808; Hello and thank you for stopping by! I'm Anis Faqihah Binti Mohd Hanapiah, and I'm excited to share a little bit about myself with you here..</p>
+    
+      <div class="image-container">
+        <img src="gambar/mirror.jpg" alt="About Image1" width="150">
+        <img src="gambar/selfie.jpg" alt="About Image2" width="150" height="180">
+        <img src="gambar/camera.jpg" alt="About Image2" width="150">
+      </div>
+    
+      <p> &#127808; I'm from the state of Melaka, which is famous for its rare histories that exist in Malaysia. I'm an ambivert, where there are times when I like to go out to meet friends and times when I don't want to meet people at all.</p> 
+	<br>
+      <p>&#127808; Every time I come back from university, I always ask my ummi to cook my favorite food, which is Asam Pedas and Sambal Udang. Besides that, every time I go back to my hometown in Negeri Sembilan, I will buy pulut made by Oghang Nogori. Pulut consists of glutinous rice, coconut flakes, and sambal petai. I am also a coffee lover. I drink all kinds of coffee, including amaricano, but my choice is toasted almond coffee because of the soft roasted nut aroma and delicious creamy taste </P>
+      <div class="image-container">
+        <img src="gambar/pulut.jpg" alt="About Image1" width="150">
+        <img src="gambar/coffe.jpg" alt="About Image2" width="150">
+        <img src="gambar/food.jpg" alt="About Image2" width="150">
+      </div>
+    </section>
+
+    <section id="family">
+      <h2>&#127807;Family &#127807; </h2>
+      <p>I love my family so much!!! My parents always support me and are always there for me, even though I always make trouble. From childhood to adulthood, they always make sure my needs are enough, whatever I want they give me even more in terms of food. My mother always cooks me Asam Pedas Ikan Pari. Meanwhile, my father always takes me to our favorite place to eat, which is Mee Bodoh Tengkera in Melaka.</p>
+
+      <img src="gambar/familypic.jpg" alt="Family Photo" width="400">
+
+      <p>I have four siblings, I am the oldest. I have two younger brothers and a younger sister. The first younger brother,Adib, was born in 2007, while the second, Ariq, was born in 2011. They are very naughty, but I am lucky because when they do something wrong, my parents will not blame me, unlike other parents. But they are also the ones I always rely on to take care of my parents and my little sister when I am away from home. They are stubborn but at the same time they are also useful sometimes. It is normal for siblings, there are times when they fight and there are times when they make up. However, I still love them (sometimes &#128580;)</p>
+      <div class="image-container">
+        <img src="gambar/trio.jpg" alt="Siblings Photo" width="150">
+        <img src="gambar/afya.jpg" alt="Sister Photo" width="150">
+      </div>
+      <p> My younger sister was born in 2024, 19 years apart from me. I know you must think it's far away...but when I think back, it's normal because my mother and her sister are 18 years apart. The worst thing is that my younger sister was born when I was taking the final test for the subject IMC 111. I didn't know when I was going to take the exam, because I had mixed feelings. But my younger sister was born safely and was named Afya. I like to call her CikMok because she's small and fluffy.</p>
+      <div class="image-container">
+        <img src="gambar/cikmok.jpg" alt="Baby Photo" width="150">
+        <img src="gambar/cikmok2.jpg" alt="Baby Photo" width="150">
+      </div>
+    </section>
+
+    <section id="friends">
+      <h2>&#127804;Ma Homies&#127804;</h2>
+      <p>I have many acquaintances, but only one can be called a friend. I say this because she is the only one who is still in touch with me to this day. Even though we are far apart, we don't always call or chat, but she still makes me feel comfortable every time we meet.</p>
+      <div class="image-container">
+        <img src="gambar/annurpic1.jpg" alt="Friend Photo" width="180">
+        <img src="gambar/annurpic2.jpg" alt="Friend Photo" width="180">
+      </div>
+      <p>Her name is An'nur Farisya Najwa Zahreen. She's the only friend who has been friends with me since we were 10 years old until now. She is a happy person but has never been stingy with me. She is beautiful, kind and strong to face everything. She was also a successful swimmer when we were in high school.</p>
+	<br>
+      <p>I don't want to say that my acquaintances at school and University are not my friends... There are many, but I can't call them friends yet. Because people come and go. They leave many sweet memories throughout my life. It's usual in life, but I am grateful to have met many acquaintances who always help me, no matter if it is about money or tasks. Like Najihah, Fatin, Sufi, Nisa and many others, they don't mind giving me help.</p>
+
+      <div class="image-container">
+        <img src="gambar/withtinsa.jpg" alt="Friends Photo" width="180">
+        <img src="gambar/withsufi.jpg" alt="Friends Photo" width="180">
+      </div>
+	<br>
+      <div class="image-container">
+        <img src="gambar/denganfatin.jpg" alt="Friends Photo" width="180">
+        <img src="gambar/withjiha.jpg" alt="Friends Photo" width="180">
+      </div>
+      <p>I love and appreciate everyone who helps me, gives me advice, and makes me think mature. They also always express and share their life stories with me, which makes me grateful for my life and makes me more mature and think before acting.</p>
+
+
+    </section>
+
+    <section id="education">
+      <h2>&#127891;Education&#128218;</h2>
+      <div style="overflow-x:auto;">
+        <table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse: collapse; background-color: white;">
+          <thead style="background-color: #BDB76B; color: white;">
+            <tr>
+              <th>School/ Institution</th>
+              <th>Years</th>
+              <th>Field of Study</th>
+              <th>Photos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SK Taman Bukit Rambai</td>
+              <td>2012-2017</td>
+              <td>Basic Subject</td>
+              <td><img src="video_html/skrendah.jpeg" alt="Logo SK Contoh" width="80"></td>
+            </tr>
+            <tr>
+              <td>SMK Bukit Rambai</td>
+              <td>2018-2022/23</td>
+              <td>Basic Subject, Business, Household Science, and Geography </td>
+              <td><img src="video_html/SEK_MEN.jpeg" alt="Logo SMK Contoh" width="80"></td>
+            </tr>
+            <tr>
+              <td>Universiti Teknologi MARA (UiTM) Kedah Branch</td>
+              <td>2023-Current</td>
+              <td>Diploma in Library Informatics</td>
+              <td><img src="video_html/Uitmlogo.jpeg" alt="Logo Universiti Contoh" width="80"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="image-container">
+        <img src="gambar/schoolmate1.jpg" alt="Schoolmates" width="200">
+        <img src="gambar/classmate.jpg" alt="Classmates" width="200">
+      </div>
+    </section>
+
+    <section id="interests">
+      <h2>Interests</h2>
+      <p>I am someone who likes to try new things like hunting for new cafes and places to eat, especially those that provide food that has a new appeal and is reasonably priced.</p>
+      <div class="image-container">
+        <img src="gambar/food2.jpg" alt="Food" width="150">
+        <img src="gambar/food3.jpg" alt="Food" width="150">
+        <img src="gambar/food9.jpg" alt="Food" width="150">
+      </div>
+	<br>
+      <p>Not only that, I also like places that involve nature.</p>
+      <div class="image-container">
+        <img src="gambar/nature1.jpg" alt="Nature" width="150">
+        <img src="gambar/nature2.jpg" alt="Nature" width="150">
+      </div>
+      <p>Apart from that, I also have a desire to try out extreme activities like bungee jumping and flying fox, but my parents don't let me, and I don't have the money or friends to do all those activities.</p>
+      <br>
+      <h3>Short Story</h3>
+      <p>I have one story... in the 3rd semester, my friend and I went to bathe at the eco park. I told my mom, she said "okay". And then I called my mom and said I was tired of bathing near the rapids area. Then she got angry, even though the night before I went, she said okay Tauuuuu. She must have thought I was walking there instead of bathing there (telling with a sad heart)</p>
+      <div class="image-container">
+        <img src="gambar/tupah.jpg" alt="Mandi" width="180" height="180">
+      <br>
+      <video width="240" height="180" controls>
+        <source src="video_html/mandimanda.mp4" type="video/mp4">
+      </video> 
+      </div>
+
+      </section>
+     
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <p>In my gallery, I will put all the photos of my memories with my family, the people I love, and the friends I will always remember.</p>
+      <div class="image-container">
+        <img src="gambar/dengan_nenek.jpg" alt="Gallery Image 1" width="180">
+        <img src="https://via.placeholder.com/200" alt="Gallery Image 2">
+        <img src="https://via.placeholder.com/200" alt="Gallery Image 3">
+      </div>
+      <h3>Large Family on The Mother's Side</h3>
+      <p>My mother has six siblings, my mother is she sixth, which is the youngest. My mother has 2 older brothers and 3 older sisters. They always inspire me to continue studying.</p>
+      <div class="image-container">
+        <img src="gambar/uwan&afya.jpg" alt="grandma" width="200">
+        <img src="gambar/motherbig.jpg" Mother's family" width="400">
+      </div>
+      <h3>Large Family on the Father's Side</h3>
+      <p>My father has 5 siblings, my father is the fourth. My father has one sister, 2 brothers, and 1 sister. They like to tease people (Melaka style) and like to have BBQs.</p>
+      <div class="image-container">
+        <img src="gambar/fatherbig.jpg" alt= Father's family" width="280">
+      </div>
+	<br>
+      <p>Throughout my growing up, I was raised by two different caregivers. The first was MakYah and her family. And the second was my grandmother, CikAna and their family. To this day, I consider them family because they always treated me well.</p>
+      <div class="image-container">
+        <img src="gambar/makyah.jpg" alt="babysitter" width="250"  height="250">
+        <img src="gambar/nenek&cikana.jpg" alt="babysitter" width="200">
+      </div>
+
+
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>If you have any questions, please contact me! Don't be shy, I'm not a ghost</p>
+      <ul>
+        <p><b>Email:</b> 2023625756@student.uitm.edu.my</p>
+        <p><b>Instagram:</b>qiwapucitaulahh</p>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 QIHAH'S WEBSITE</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    // Toggle video play/pause
+    var video = document.getElementById("myVideo");
+    var btn = document.getElementById("myBtn");
+
+    function toggleVideo() {
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+      } else {
+        video.pause();
+        btn.innerHTML = "Play";
+      }
+    }
+
+    // Toggle menu for mobile
+    function toggleMenu() {
+      var navbar = document.getElementById("myNavbar");
+      if (navbar.className === "navbar") {
+        navbar.className += " responsive";
+      } else {
+        navbar.className = "navbar";
+      }
+    }
+
+    // Show content section
+    function showSection(id) {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(section => section.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+      // Close menu if in mobile view
+      var navbar = document.getElementById("myNavbar");
+      if (navbar.className.includes("responsive")) {
+        navbar.className = "navbar";
+      }
+      // Scroll to top of section
+      window.scrollTo(0, document.getElementById(id).offsetTop - 60);
+    }
+  </script>
+
+</body>
+</html>
